@@ -8,6 +8,10 @@
 	text-decoration: none;
 }
 
+body{
+
+}
+
 p {
 	font-size: 1.3rem;
 	/* rootemの略、デフォ16pxだから */
@@ -15,6 +19,10 @@ p {
 li {
 	list-style: none;
 	font-size: 1.2rem;
+}
+section{
+
+	overflow:hidden;
 }
 .wrapper {
 	/* max-width: 1280px; */
@@ -30,7 +38,7 @@ li {
 	margin: 0 10px;
 }
 
-/* header */
+/***** header *****/
 header{
 	background-color: #000;
 }
@@ -72,7 +80,7 @@ header{
 	width: 30px;
 }
 
-/* main */
+/***** main *****/
 #main {
 	margin-bottom: 40px;
 }
@@ -84,7 +92,17 @@ header{
 	object-fit: cover;
 }
 
-/* about */
+/***** about *****/
+#about{
+	transform: translateX(100%);
+	opacity: 0;
+}
+#about.rightSlide{
+	transform: translateX(0);
+	opacity: 1;
+	transition: all 3s;
+}
+
 #about ul {
 	margin-bottom: 30px;
 }
@@ -93,6 +111,17 @@ header{
 }
 #about ul li {
 	margin-bottom: 3px;
+}
+.about-sec{
+	display: flex;
+	justify-content:  space-around;
+	align-items: center;
+}
+.office-img{
+	height: 300px;
+	width: 400px;
+	background-image: url(img/office.jpg);
+	object-fit: cover;
 }
 .tel_btn{
 	font-size: 16px;
@@ -109,7 +138,16 @@ header{
 	transition: all .1s;
 }
 
-/* works */
+/***** works *****/
+#works{
+	transform: translateX(-100%);
+	opacity: 0;
+}
+#works.leftSlide{
+	transform: translateX(0%);
+	opacity: 1;
+	transition: all 3s;
+}
 #works ul {
 	display: flex;
 	flex-wrap: wrap;
@@ -130,14 +168,22 @@ header{
 	cursor: pointer;
 	transition: all 0.3s;
 }
-
 #works ul li img:hover {
 	transform: scale(1.1);
 	/* scale: 1.2; */
 	opacity: 0.7;
 }
 
-/* news */
+/***** news *****/
+#news{
+	transform: translateX(100%);
+	opacity: 0;
+}
+#news.rightSlide{
+	transform: translateX(0);
+	opacity: 1;
+	transition: all 3s;
+}
 #news dl {
 	display: flex;
 	flex-wrap: wrap;
@@ -155,12 +201,19 @@ header{
 	padding: 15px;
 }
 
-/* contact */
+/***** contact *****/
 #contact{
 	background-color: #fff;
 	color: #000;
 	transition: all 0.2s;
 	text-align: center;
+	transform: translateX(-100%);
+	opacity: 0;
+}
+#contact.leftSlide{
+	transform: translateX(0%);
+	opacity: 1;
+	transition: all 3s;
 }
 #contact p {
 	margin-bottom: 20px;
@@ -198,7 +251,7 @@ header{
 	color: #000; */
 	opacity: .7;
 }
-/* footer */
+/***** footer *****/
 footer{
 	height: 80px;
 	/* width: 100%; */
@@ -213,7 +266,7 @@ footer p{
 	font-size: 16px;
 }
 
-/* sp */
+/***** sp *****/
 @media screen and (max-width:680px) {
 	body{
 		min-width: 500px;
@@ -221,7 +274,7 @@ footer p{
 	.site-title {
 		margin-top: 20px;
 	}
-	/* header */
+	/***** header *****/
 	.header {
 		flex-direction: column;
 		height: auto;
@@ -243,7 +296,7 @@ footer p{
 		height: 400px;
 	}
 
-	/* works */
+	/***** works *****/
 	#works ul {
 		flex-direction: column;
 	}
@@ -254,7 +307,7 @@ footer p{
 	transform: scale(1.0);
 }
 
-	/* news */
+	/***** news *****/
 	#news dl {
 		flex-direction: column;
 	}
@@ -268,7 +321,7 @@ footer p{
 		padding-top: 0;
 	}
 
-	/* contact */
+	/***** contact *****/
 	#contact dl {
 		flex-direction: column;
 	}
